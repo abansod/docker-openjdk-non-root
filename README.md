@@ -1,2 +1,2 @@
 # openjdk-non-root
-open jdk non root docker file
+Dockerfile for openjdk with non root user - abansod04/openjdk

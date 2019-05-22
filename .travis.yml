@@ -9,6 +9,6 @@ branches:
 
 script:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker build -t "abansod04/openjdk:8-slim-nonroot" .
-- docker push "abansod04/openjdk:8-slim-nonroot"
+- docker build -t "abansod04/openjdk:8-slim-nonroot-v$TRAVIS_BUILD_NUMBER" .
+- docker push "abansod04/openjdk:8-slim-nonroot-v$TRAVIS_BUILD_NUMBER"
 - docker logout

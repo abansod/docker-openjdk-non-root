@@ -1,6 +1,7 @@
-FROM openjdk:8-jdk-slim
+FROM openjdk:8-jdk
 
-RUN useradd -ou 10000 -g 0 -d /home/jenkins/workspace jenkins
-RUN mkdir -p /home/jenkins/workspace
-RUN chown -R jenkins /home/jenkins/workspace
+RUN groupadd --system --gid 1000 jenkins
+RUN useradd --system --gid jenkins --uid 1000 --shell /bin/bash --create-home jenkins
+
 USER jenkins
+WORKDIR /home/jenkins
